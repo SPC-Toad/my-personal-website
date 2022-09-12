@@ -1,0 +1,160 @@
+:root {
+	--kim-color: hsl(280, 80%, 45%);
+	--kim-color: #7272FF;
+}
+
+slot {
+	display: grid;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	border: none;
+	outline: none;
+	padding: 0;
+}
+
+html {
+	width: 100vw;
+	height: 100vh;
+}
+
+body {
+	display: grid;
+	width: 100%;
+	height: 100%;
+	grid-template-rows: 5rem 4fr 5rem;
+	
+}
+
+#nav {
+	display: grid;
+	grid-template-areas:
+		"hamburger-menu . links"
+	;
+    place-items: center;
+	padding-right: 3rem;
+	background-color: #333;
+}
+
+#links {
+	grid-area: links;
+	display: grid;
+	grid-auto-flow: column;
+	gap: 5rem;
+	font-size: 2rem;
+	justify-self: right;
+
+}
+
+#links > a {
+	display: grid;
+	place-items: center;
+	width: 100%;
+	height: 100%;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+#main {
+	display: grid;
+	padding: 6%;
+	place-content: center;
+	row-gap: 0.5rem;
+	column-gap: 1rem;
+	grid-template-columns: 30rem 2rem;
+	grid-template-rows: 10rem 3rem;
+	grid-template-areas:
+		"text img"
+		"button img"
+	;
+}
+
+#main-text {
+    grid-area: text;
+	display: grid;
+	gap: 0.25rem;
+    font-size: 1.2rem;
+}
+
+#contact-button {
+    display: grid;
+    place-content: center;
+	grid-area: button;
+	background-color: var(--kim-color);
+	border-radius: 1.2rem;
+	width: 15rem;
+    text-decoration: none;
+    color: azure;
+    font-size: 1.1rem;
+	gap: 1rem;
+	grid-auto-flow: column;
+	/* animation: running spin infinite alternate both;
+	animation-duration: 1s;
+	animation-delay: 1s; */
+}
+
+#menu {
+	grid-area: hamburger-menu;
+    display: grid;
+    cursor: pointer;
+	gap: 8px; 
+	justify-self: left;
+	margin: 1.6rem;
+}
+
+.bar {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    transition: .5s;
+}
+
+#menu.change > .bar:nth-of-type(1) {
+    transform:
+    rotate(-45deg)
+    translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+#menu.change > .bar:nth-of-type(2) {
+    opacity: 0;
+}
+
+#menu.change > .bar:nth-of-type(3) {
+    transform:
+    rotate(45deg)
+    translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+#pepe-happy {
+	width: 8vmax;
+	height: 8vmax;
+    animation: 5s running hesitating infinite normal both ease;
+    /* transform: scale3d(.2, .2, .2); */
+    /* position: fixed; */
+}
+
+@keyframes hesitating {
+	0%, 100% {
+		translate: 0% 0%;
+        transform: rotateY(0turn) scale3d(.2, .2, .2);
+	}
+
+	25% {
+		translate: calc(100vw - 100%) 0%;
+        transform: rotateY(.5turn) scale3d(.2, .2, .2);
+	}
+
+    50% {
+        translate: calc(100vw - 100%) calc(-100vh + 100%);
+        transform: rotateY(.5turn) scale3d(.2, .2, .2);
+    }
+
+    75% {
+        translate: 0% calc(-100vh + 100%);
+        transform: scale3d(.2, .2, .2);
+    }
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>I Just Work Here</title>
+		<link rel="shortcut icon" href="files/toad-icon.png">
+		<script src="./main.js" defer type="module" charset="utf-8"></script>
+		<link rel="stylesheet" href="./style.css">
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+	</head>
+	<body>
+		<slot name="nav_slot"></slot>
+		<main id="main">
+			<section id="main-text">
+				<h1>Hello there,</h1>
+				<span>I'm <span style="color: var(--kim-color)">Kim</span></span>
+				<span>Software Engineer</span>
+				<span>Currently persuing in Bachelor's Degree Computer Science</span>
+			</section>
+			<img style="grid-area: img" src="./files/bitmoji.png" alt="I just work here">
+			<a id="contact-button" href="/contact"><div>How To Contact Me</div> <i class='fa fa-send'></i></a>
+		</main>
+	</body>
+</html>

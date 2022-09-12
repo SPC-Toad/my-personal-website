@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>About Me</title>
+		<link rel="shortcut icon" href="/files/toad-icon.png">
+		<script src="./main.js" defer type="module" charset="utf-8"></script>
+		<link rel="stylesheet" href="./style.css">
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+	</head>
+	<body>
+		<slot name="nav_slot"></slot>
+		<main id="main">
+			<section id="main-text">
+				<div id="about-me">about me</div>
+                <div>I'm a Software Engineer who enjoys developing web-pages and data structures!</div>
+                <div>I have experience working with HTML/CSS, Javascript, and React for web-page development, and 
+                    Python, Java and C programming languages for data structures.</div>
+                <div>I'm currently pursuing a bachelor's degree in computer science at the University of Massachusetts Boston.</div>
+                <div>To learn more about me, check out my resume!</div>
+			</section>
+			<img style="grid-area: img" src="/files/bitmoji.png" alt="I just work here">
+			<a id="contact-button" href="/files/Resume-Sangyun Kim.pdf" target="_new" >   <div>Check out my resume!</div> <i class="fa fa-file-pdf-o"></i></a>
+		</main>
+	</body>
+</html>
